@@ -1,22 +1,26 @@
 int contador1 = 0; //Declarar el contador
-int tiempoAnterior = 0; 
-const int intervalo1 = 1000; //Intervalo de 0.1 segundos
+int contador2 = 0; //Declarar el contador
 
 void setup() {
   Serial.begin(9600);
-
 }
 
 void loop() {
   
-  int tiempoActual = millis();
-
-  if ((tiempoActual - tiempoAnterior) == intervalo1){
+  for(int i = 0; i < 20; i++){
     contador1++; //Incrementamos el contador
     //Imprimir el contador
     Serial.print("ctr1: ");
     Serial.println(contador1);
-    tiempoAnterior = tiempoActual;
+    Serial.print("ctr2: ");
+    Serial.println(contador2);
+    delay(100);
   }
+    contador2++;
+    contador1 -= contador2;
+    Serial.print("ctr1: ");
+    Serial.println(contador1);
+    Serial.print("ctr2: ");
+    Serial.println(contador2);
   
 }
