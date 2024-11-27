@@ -25,7 +25,8 @@ void loop() {
     Serial.print("ctr2: ");
     Serial.println(contador2);
     tiempoInicio1 = tiempoActual;
-  } else if ((tiempoActual - tiempoInicio2) >= intervalo2) {
+  }
+  if ((tiempoActual - tiempoInicio2) >= intervalo2) {
     contador2++;
     contador1 -= contador2;
     Serial.print("ctr1: ");
@@ -34,5 +35,4 @@ void loop() {
     Serial.println(contador2);
     tiempoInicio2 = tiempoActual;
   }
-  
 }
