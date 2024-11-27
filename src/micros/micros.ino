@@ -11,12 +11,11 @@ void setup() {
   Serial.begin(9600);
   tiempoInicio1 = micros();
   tiempoInicio2 = tiempoInicio1; 
-
 }
 
 void loop() {
   
-  int tiempoActual = micros();
+  unsigned long tiempoActual = micros();
 
   if ((tiempoActual - tiempoInicio1) >= intervalo1){
     contador1++; //Incrementamos el contador
